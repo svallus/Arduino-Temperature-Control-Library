@@ -102,8 +102,8 @@ public:
     request_t requestTemperatures(void);
     request_t requestTemperaturesByAddress(const uint8_t*);
     request_t requestTemperaturesByIndex(uint8_t);
-    int32_t getTemp(const uint8_t*, byte retryCount = 0);
-    float getTempC(const uint8_t*, byte retryCount = 0);
+    int32_t getTemp(const uint8_t*, uint8_t retryCount = 0);
+    float getTempC(const uint8_t*, uint8_t retryCount = 0);
     float getTempF(const uint8_t*);
     float getTempCByIndex(uint8_t);
     float getTempFByIndex(uint8_t);

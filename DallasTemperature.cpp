@@ -280,7 +280,7 @@ bool DallasTemperature::recallScratchPad(const uint8_t* deviceAddress) {
     return (_wire->reset() == 1);
 }
 
-int32_t DallasTemperature::getTemp(const uint8_t* deviceAddress, byte retryCount) {
+int32_t DallasTemperature::getTemp(const uint8_t* deviceAddress, uint8_t retryCount) {
     ScratchPad scratchPad;
     byte retries = 0;
     
@@ -293,7 +293,7 @@ int32_t DallasTemperature::getTemp(const uint8_t* deviceAddress, byte retryCount
     return DEVICE_DISCONNECTED_RAW;
 }
 
-float DallasTemperature::getTempC(const uint8_t* deviceAddress, byte retryCount) {
+float DallasTemperature::getTempC(const uint8_t* deviceAddress, uint8_t retryCount) {
     return rawToCelsius(getTemp(deviceAddress, retryCount));
 }
 
